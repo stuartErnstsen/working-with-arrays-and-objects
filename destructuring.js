@@ -21,7 +21,7 @@ var carDetails = {
   Use object destructuring to save the property values from the object carDetails into new variables. 
 */
 
-//Code Here
+const { color, make, model, year } = carDetails;
 
 
 
@@ -33,9 +33,9 @@ var carDetails = {
   The property names are firstName, lastName, and title.
 */
 
-function greeting( obj ) {
+function greeting(obj) {
   //Code Here
-  
+  const { firstName, lastName, title } = obj;
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
   // Do not edit the code above.
@@ -54,21 +54,28 @@ function greeting( obj ) {
 */
 
 //Code Here
-
+function totalPopulation(obj) {
+  const { utah, california, texas, arizona } = obj;
+  return utah + california + texas + arizona;
+}
 
 
 ////////// PROBLEM 4 //////////
 
 /*
-  Write a function called ingredients that will take in an object. 
-  This object will have 3 properties named carb, fat, and protein. 
-  The property values will be strings. 
-  Use object destructuring to save the property values to new variables. 
-  Push these new variables to an array and return the array. 
+  Write a function called ingredients that will take in an object.
+  This object will have 3 properties named carb, fat, and protein.
+  The property values will be strings.
+  Use object destructuring to save the property values to new variables.
+  Push these new variables to an array and return the array.
 */
 
 //Code Here
-
+function ingredients({ carb, fat, protein }) {
+  const arr = []
+  arr.push(carb, fat, protein)
+  return arr;
+}
 
 
 ////////// PROBLEM 5 //////////
@@ -86,7 +93,11 @@ function greeting( obj ) {
 */
 
 //Code Here
-
+function largeNumbers({ first, second, third }) {
+  return first < second && first < third ? first
+    : second < first && second < third ? second
+      : third
+}
 
 
 ////////// PROBLEM 6 //////////
@@ -98,5 +109,9 @@ function greeting( obj ) {
 */
 
 //Code Here
-
+function numberGroups({ a, b, c }) {
+  return a.length > b.length && a.length > c.length ? a
+    : b.length > a.length && b.length > c.length ? b
+      : c
+}
 
