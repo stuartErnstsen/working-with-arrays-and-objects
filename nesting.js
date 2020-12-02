@@ -51,6 +51,31 @@ var employees = [
 */
 
 //Code Here
+// function employeeUpdater() {
+//   console.log(employees)
+//   for (let emp in employees) {
+//     console.log(emp)
+//     if (employees[emp].firstName === "Theo") {
+//       employees.splice(emp, 1)
+//     }
+//     if (employees[emp].firstName === "Lorie") {
+//       employees[emp].department = "HR"
+//     }
+//   }
+//   return employees;
+// }
+
+function employeeUpdater() {
+  employees.forEach(function (emp) {
+    if (emp.firstName === "Theo") {
+      employees.splice(employees.indexOf(emp), 1)
+    }
+    if (emp.firstName === "Lorie") {
+      emp.department = "HR"
+    }
+  })
+  return employees;
+}
 
 
 
@@ -69,7 +94,16 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 */
 
 //Code Here
-
+function removeDuplicates() {
+  workplaceAccidents.forEach(function (num) {
+    workplaceAccidents.forEach(function (num2) {
+      if (num2 === num && workplaceAccidents.indexOf(num) !== workplaceAccidents.lastIndexOf(num2)) {
+        workplaceAccidents.splice(workplaceAccidents.lastIndexOf(num2), 1);
+      }
+    })
+  })
+  return workplaceAccidents;
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -81,7 +115,7 @@ var cat = {
     {
       name: 'Grumpy',
       activities: ['be grumpy', 'eat food']
-    }, 
+    },
     {
       name: 'Lazy Bones',
       activities: ['sleep', 'pre-sleep naps']
@@ -97,8 +131,8 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+var grumpyActivity = cat.catFriends[0].activities[1];
+var fluffy2ndFriend = cat.catFriends[1].name;
 
 
 
@@ -139,18 +173,22 @@ var myCar = {
 */
 
 //Code Here
-
+function recordCleaner() {
+  myCar.accidents.forEach(function (acc) {
+    acc.atFaultForAccident = false;
+  })
+}
 
 
 ////////// PROBLEM 5 //////////
 
 // Do not edit the code below.
-var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
+var numsArr = [[1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
 // Do not edit the code above.
 
 /*
   Above is an array of arrays. Use two for loops.
-    1. Write a function called 'looper'. 
+    1. Write a function called 'looper'.
     2. 'looper' should loop over the arrays.
     3.  If the number is odd, replace it with 'odd'.
         If the number is even, replace it with 'even'.
@@ -158,5 +196,13 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
 */
 
 //Code Here
-
+function looper() {
+  numsArr.forEach(function (arr) {
+    arr.forEach(function (num) {
+      arr[arr.indexOf(num)] = num % 2 === 0 ? 'even'
+        : 'odd'
+    })
+  })
+  return numsArr;
+}
 
