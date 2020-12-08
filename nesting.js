@@ -74,7 +74,7 @@ function employeeUpdater() {
       emp.department = "HR"
     }
   })
-  return employees;
+  return employees
 }
 
 
@@ -95,10 +95,10 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 
 //Code Here
 function removeDuplicates() {
-  workplaceAccidents.forEach(function (num) {
-    workplaceAccidents.forEach(function (num2) {
-      if (num2 === num && workplaceAccidents.indexOf(num) !== workplaceAccidents.lastIndexOf(num2)) {
-        workplaceAccidents.splice(workplaceAccidents.lastIndexOf(num2), 1);
+  workplaceAccidents.forEach(function (num, index) {
+    workplaceAccidents.slice(index + 1).forEach(num2 => {
+      if (num2 === num) {
+        workplaceAccidents.splice(index, 1);
       }
     })
   })
@@ -199,8 +199,7 @@ var numsArr = [[1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
 function looper() {
   numsArr.forEach(function (arr) {
     arr.forEach(function (num) {
-      arr[arr.indexOf(num)] = num % 2 === 0 ? 'even'
-        : 'odd'
+      arr[arr.indexOf(num)] = num % 2 === 0 ? 'even' : 'odd'
     })
   })
   return numsArr;
