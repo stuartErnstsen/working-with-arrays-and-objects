@@ -197,9 +197,9 @@ var numsArr = [[1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
 
 //Code Here
 function looper() {
-  numsArr.forEach(function (arr) {
-    arr.forEach(function (num) {
-      arr[arr.indexOf(num)] = num % 2 === 0 ? 'even' : 'odd'
+  numsArr.forEach(arr => {
+    arr.forEach((num, i) => {
+      arr[i] = num % 2 === 0 ? 'even' : 'odd'
     })
   })
   return numsArr;
